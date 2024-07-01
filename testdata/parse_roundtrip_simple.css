@@ -1,0 +1,15 @@
+:root {
+  --brand: #1a73e8;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+.headline {
+  color: var(--brand);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.body {
+  color: #222;
+  line-height: 1.6;
+}

@@ -1,0 +1,8 @@
+:root {
+  --color-primary: #0a84ff;
+  --space-2: 0.5rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --color-primary: #409cff; }
+}
+.foo { color: var(--color-primary); padding: var(--space-2); }
