@@ -200,3 +200,8 @@ discipline on every file, perfect incremental git history).
 
 
 
+
+## 2026 Polish for platformkit-courses
+
+This library (with its history) is intended as a citable example of modern Go
+library craft: real incremental development, rich godoc with black-box Examples, C-14 discipline, and exemplary git history.
