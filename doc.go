@@ -43,6 +43,3 @@
 //
 // See the [examples] directory and the README for more complete programs.
 package styleengine
-
-// Note: C-14 discipline header retained only in the monorepo transitional copy.
-// Published library version prioritizes clean godoc above.

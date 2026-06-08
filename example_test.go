@@ -49,3 +49,20 @@ func Example_parseRoundtrip() {
 	// Output:
 	// roundtrip ok: true
 }
+
+// Example_atruleMedia demonstrates a nested @media at-rule (black-box coverage for at-rules claimed in README).
+func Example_atruleMedia() {
+	sheet, _ := styleengine.New().
+		Media("(prefers-color-scheme: dark)", func(b *styleengine.Builder) {
+			b.Rule("body").Decl("background", styleengine.Literal("#000")).Done()
+		}).
+		Build().
+		Render(styleengine.RenderOptions{Pretty: true})
+	fmt.Println(sheet)
+	// Output:
+	// @media (prefers-color-scheme: dark) {
+	//   body {
+	//     background: #000;
+	//   }
+	// }
+}

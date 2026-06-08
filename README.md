@@ -57,7 +57,7 @@ func main() {
 ```
 
 `Var` registers a `--font-display` custom property in `:root`. `VarRef` emits
-`var(--font-display, swap)`. Both enforce the `[a-z][a-z0-9-]*` naming rule at
+`var(--font-display, swap)`. Both enforce the `[a-z][a-z0-9_-]*` naming rule at
 call time, so mis-spellings are caught immediately rather than silently emitted.
 
 ---
@@ -78,8 +78,7 @@ call time, so mis-spellings are caught immediately rather than silently emitted.
 | `RuleBuilder` | struct | Accumulates declarations; `.Done()` commits to parent |
 | `KeyframesBuilder` | struct | Accumulates `@keyframes` stops |
 | `FontFaceDecl` | struct | Structured `@font-face` descriptor |
-| `RenderOptions` | struct | Controls pretty/minify/MaxBytes for `Render` |
-| `DefaultMaxBytes` | const | Default 1 MiB safety ceiling |
+| `RenderOptions` | struct | Controls pretty/minify/MaxBytes for `Render`. Pretty and Minify are mutually exclusive; negative MaxBytes disables the ceiling. |
 
 ---
 
@@ -88,12 +87,12 @@ call time, so mis-spellings are caught immediately rather than silently emitted.
 ```go
 type RenderOptions struct {
 	Pretty   bool  // emit indented multi-line output
-	Minify   bool  // run tdewolff/minify (overrides Pretty)
+	Minify   bool  // run tdewolff/minify (mutually exclusive with Pretty; both returns error)
 	MaxBytes int64 // 0 → DefaultMaxBytes (1 MiB)
 }
 ```
 
-`Render` always enforces a byte ceiling. When `MaxBytes` is zero it falls back
+`Render` enforces a byte ceiling (negative MaxBytes disables). When `MaxBytes` is zero it falls back
 to `DefaultMaxBytes` (1 MiB = `1 << 20`). If the rendered output exceeds the
 limit `Render` returns an error rather than a truncated string, so callers
 cannot silently serve corrupt CSS.
@@ -102,7 +101,7 @@ cannot silently serve corrupt CSS.
 
 ## Variable safety
 
-`Var` and `VarRef` both enforce `[a-z][a-z0-9-]*` on the custom-property name
+`Var` and `VarRef` both enforce `[a-z][a-z0-9_-]*` on the custom-property name
 and panic immediately if the constraint is violated. The leading `--` is added
 automatically — callers never write it.
 
@@ -187,21 +186,3 @@ minimal dependencies.
 
 See the godoc for the full API and the `Example` functions (including roundtrips
 and at-rule usage) that render in documentation and pass `go test -run Example`.
-
-## Provenance
-
-Extracted from PlatformKit (septagon-dev) as a reusable building block.
-Original lived in platformkit-shared/styleengine. Made fully generic and
-zero-PlatformKit for the OSS community.
-
-See the case study in the PlatformKit docs for extraction details and the
-Library Excellence Standard applied (rich godoc, black-box Examples, C-14
-discipline on every file, perfect incremental git history).
-
-
-
-
-## 2026 Polish for platformkit-courses
-
-This library (with its history) is intended as a citable example of modern Go
-library craft: real incremental development, rich godoc with black-box Examples, C-14 discipline, and exemplary git history.

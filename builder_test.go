@@ -1,9 +1,5 @@
 // Implements: OSS-BB-001 (styleengine building block; tests).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance) (Phase 0).
-// Discipline: C-14.
-
-// Implements: OSS-BB-001 (styleengine; tests).
-// Per: ADR-0029; 2026-06-master-plan.
+// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance).
 // Discipline: C-14.
 
 package styleengine
