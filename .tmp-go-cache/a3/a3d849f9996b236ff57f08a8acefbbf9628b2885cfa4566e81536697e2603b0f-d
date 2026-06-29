@@ -1,5 +1,0 @@
-# test log
-open testdata/parse_roundtrip_simple.css
-open testdata/fuzz/FuzzSanitize
-open testdata/fuzz/FuzzParse
-open testdata/fuzz/FuzzRender_BuilderInputs

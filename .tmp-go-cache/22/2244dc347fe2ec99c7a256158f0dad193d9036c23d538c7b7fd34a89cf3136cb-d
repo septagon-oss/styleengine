@@ -1,7 +1,0 @@
-./binary.go
-./binary_unix.go
-./common.go
-./error.go
-./input.go
-./position.go
-./util.go
