@@ -12,10 +12,10 @@ import (
 
 func bigSheet(n int) *Sheet {
 	b := New()
-	for i := 0; i < n; i++ {
+	for i := range n {
 		b.Var(fmt.Sprintf("v%d", i), fmt.Sprintf("%dpx", i))
 	}
-	for i := 0; i < n; i++ {
+	for i := range n {
 		sel := fmt.Sprintf(".class-%d", i)
 		b.Rule(sel).
 			Decl("color", VarRef(fmt.Sprintf("v%d", i), "")).

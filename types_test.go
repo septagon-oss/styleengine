@@ -54,7 +54,6 @@ func TestVarRefValue_RejectsBadFallback(t *testing.T) {
 		"red{}",
 	}
 	for _, bad := range cases {
-		bad := bad
 		t.Run(bad, func(t *testing.T) {
 			defer func() {
 				if recover() == nil {

@@ -53,8 +53,8 @@ func (s *Sheet) RegisteredVars() []string {
 	}
 	out := make([]string, 0, len(s.rules[idx].Decls))
 	for _, d := range s.rules[idx].Decls {
-		if strings.HasPrefix(d.Property, "--") {
-			out = append(out, strings.TrimPrefix(d.Property, "--"))
+		if after, ok0 := strings.CutPrefix(d.Property, "--"); ok0 {
+			out = append(out, after)
 		}
 	}
 	sort.Strings(out)
