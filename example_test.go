@@ -1,4 +1,5 @@
-// Implements: OSS-BB (see per-lib README for ID).
+// example_test.go provides runnable examples for the public styleengine API.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

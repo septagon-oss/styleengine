@@ -1,5 +1,6 @@
-// Implements: OSS-BB-001 (styleengine building block).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance) (Phase 0 exemplar extraction).
+// variables.go owns custom-property declaration and reference diagnostics.
+// Implements: REQ-011.
+// Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
 package styleengine
@@ -43,6 +44,9 @@ func (s *Sheet) ensureRoot() {
 // RegisteredVars returns the sorted list of custom-property names registered
 // via Var (without the "--" prefix).
 func (s *Sheet) RegisteredVars() []string {
+	if s == nil {
+		return nil
+	}
 	idx, ok := s.ruleIdx[":root"]
 	if !ok {
 		return nil
@@ -68,6 +72,9 @@ func (s *Sheet) RegisteredVars() []string {
 // references that came in through [Parse] as opaque [Literal] text are
 // detected.
 func (s *Sheet) UndefinedVars() []string {
+	if s == nil {
+		return nil
+	}
 	defined := map[string]bool{}
 	for _, name := range s.RegisteredVars() {
 		defined[name] = true

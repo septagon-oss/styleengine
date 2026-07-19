@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// types_test.go validates the typed CSS values and constructors.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

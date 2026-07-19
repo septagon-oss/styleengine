@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// render_test.go validates pretty, minified, and size-bounded CSS rendering.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

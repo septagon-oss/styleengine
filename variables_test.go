@@ -1,4 +1,6 @@
-// Implements: OSS-BB (library building block; see README).
+// variables_test.go validates custom-property declaration and reference
+// diagnostics.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
@@ -59,6 +61,18 @@ func TestSheet_UndefinedVars(t *testing.T) {
 	sort.Strings(undef)
 	if len(undef) != 1 || undef[0] != "missing" {
 		t.Fatalf("expected [missing], got %v", undef)
+	}
+}
+
+func TestSheet_VariableQueriesAreNilSafe(t *testing.T) {
+	t.Parallel()
+
+	var sheet *Sheet
+	if got := sheet.RegisteredVars(); got != nil {
+		t.Fatalf("RegisteredVars() = %v, want nil", got)
+	}
+	if got := sheet.UndefinedVars(); got != nil {
+		t.Fatalf("UndefinedVars() = %v, want nil", got)
 	}
 }
 

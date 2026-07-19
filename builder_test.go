@@ -1,5 +1,6 @@
-// Implements: OSS-BB-001 (styleengine building block; tests).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance).
+// builder_test.go validates fluent sheet and rule construction.
+// Validates: REQ-011.
+// Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
 package styleengine

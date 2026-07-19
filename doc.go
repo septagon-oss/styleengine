@@ -1,4 +1,4 @@
-// Implements: OSS-BB-001 (styleengine building block).
+// Implements: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

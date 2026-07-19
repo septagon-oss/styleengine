@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// sheet_test.go validates sheet ordering, deduplication, and composition.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

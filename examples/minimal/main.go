@@ -1,4 +1,6 @@
-// Implements: OSS-BB (see per-lib README for ID).
+// main.go demonstrates standalone use of the typed CSS intermediate
+// representation.
+// Implements: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

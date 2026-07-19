@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// benchmarks_test.go measures representative sheet rendering costs.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

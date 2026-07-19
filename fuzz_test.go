@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// fuzz_test.go probes sanitizer and parser safety over arbitrary input.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 

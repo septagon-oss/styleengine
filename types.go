@@ -1,5 +1,7 @@
-// Implements: OSS-BB-001 (styleengine building block).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance) (Phase 0 exemplar extraction).
+// types.go owns the typed values, selectors, declarations, and rules in the
+// styleengine intermediate representation.
+// Implements: REQ-011.
+// Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
 package styleengine

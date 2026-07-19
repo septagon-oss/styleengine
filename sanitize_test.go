@@ -1,5 +1,6 @@
-// Implements: OSS-BB-001 (styleengine building block; tests).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance) (Phase 0).
+// sanitize_test.go validates rejection of unsafe CSS fragments.
+// Validates: REQ-011.
+// Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
 package styleengine

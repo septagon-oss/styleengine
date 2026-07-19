@@ -1,5 +1,6 @@
-// Implements: OSS-BB-001 (styleengine building block).
-// Per: ADR-0029 (every file declares its purpose); Library Excellence Standard (see README provenance) (Phase 0 exemplar extraction).
+// diagnostics.go owns deterministic, typed sheet diagnostics.
+// Implements: REQ-011.
+// Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
 package styleengine

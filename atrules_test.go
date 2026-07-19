@@ -1,4 +1,5 @@
-// Implements: OSS-BB (library building block; see README).
+// atrules_test.go validates supported CSS at-rule construction and rendering.
+// Validates: REQ-011.
 // Per: ADR-0029 (every file declares its purpose).
 // Discipline: C-14.
 
